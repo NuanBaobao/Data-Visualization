@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="9a42b3151e63406aaef8e93641e613d2" class="chart-container" style="width:1200px; height:600px;"></div>
+    <script>
+        var chart_9a42b3151e63406aaef8e93641e613d2 = echarts.init(
+            document.getElementById('9a42b3151e63406aaef8e93641e613d2'), 'white', {renderer: 'canvas'});
+        var option_9a42b3151e63406aaef8e93641e613d2 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "sankey",
+            "name": "sankey",
+            "data": [
+                {
+                    "name": "first"
+                },
+                {
+                    "name": "second"
+                },
+                {
+                    "name": "third"
+                },
+                {
+                    "name": "crew"
+                },
+                {
+                    "name": "female"
+                },
+                {
+                    "name": "male"
+                }
+            ],
+            "links": [
+                {
+                    "source": "first",
+                    "target": "female",
+                    "value": "145"
+                },
+                {
+                    "source": "first",
+                    "target": "male",
+                    "value": "180"
+                },
+                {
+                    "source": "second",
+                    "target": "female",
+                    "value": "106"
+                },
+                {
+                    "source": "second",
+                    "target": "male",
+                    "value": "179"
+                },
+                {
+                    "source": "third",
+                    "target": "female",
+                    "value": "196"
+                },
+                {
+                    "source": "third",
+                    "target": "male",
+                    "value": "510"
+                },
+                {
+                    "source": "crew",
+                    "target": "female",
+                    "value": "23"
+                },
+                {
+                    "source": "crew",
+                    "target": "male",
+                    "value": "862"
+                }
+            ],
+            "left": "5%",
+            "top": "5%",
+            "right": "20%",
+            "bottom": "5%",
+            "nodeWidth": 20,
+            "nodeGap": 30,
+            "nodeAlign": "justify",
+            "layoutIteration": 32,
+            "orient": "horizontal",
+            "draggable": true,
+            "focusNodeAdjacency": false,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 0.3,
+                "curveness": 0.6,
+                "type": "solid",
+                "color": "source"
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "sankey"
+            ],
+            "selected": {
+                "sankey": true
+            }
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    }
+};
+        chart_9a42b3151e63406aaef8e93641e613d2.setOption(option_9a42b3151e63406aaef8e93641e613d2);
+    </script>
+</body>
+</html>
