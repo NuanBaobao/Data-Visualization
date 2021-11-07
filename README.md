@@ -1,5 +1,10 @@
 # Data-Visualization
 Data Visualization
+
+实验课程网址
+
+[点击这里]:( https://sduvis.github.io/projects)
+
 ## experiment 1 (2021.9.13 -- 2021.9.25)
 学会 D3 or Vega 基本开发
 基于至少3种不同的方法(bar chart, parallel set, scatter matrix，star plot等）把数据（dataset/exp1_titanic_disaster.csv）可视化出来。
