@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="https://ialab.it.monash.edu/webcola/cola.min.js"></script>
+<script src="//cdn.bootcss.com/d3/3.2.2/d3.v3.min.js"></script>
+<script>
+    //节点和连接数据
+    var graph={	//节点
+        "nodes":[
+            {"name":"A"},    {"name":"B"},    {"name":"C"},    {"name":"D"},
+            {"name":"E"},    {"name":"F"}
+        ],
+        "links":[	//连接
+            {"source":1,"target":0},    {"source":2,"target":0},
+            {"source":3,"target":0},    {"source":3,"target":2},
+            {"source":4,"target":0},    {"source":5,"target":0},
+
+        ],
+        "constraints":[{"axis":"y", "left":0, "right":1, "gap":25},
+            {"axis":"x", "left":3, "right":2, "gap":30}]
+    };
+
+    //SVG的尺寸
+    var width = 960,    height = 500;
+
+    //绘制一个svg
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    //定义cola布局
+    var d3cola = cola.d3adaptor()
+        //.linkDistance(100)
+        .size([width, height]);
+
+    //定义颜色比例尺
+    var color=d3.scale.category20c();
+
+    //加载数据，启动cola布局
+    d3cola
+        .nodes(graph.nodes)
+        .links(graph.links)
+        .constraints(graph.constraints)
+        .symmetricDiffLinkLengths(5)
+        .avoidOverlaps(true)
+        .start(10,15,20);
+
+    //绘制连接线
+    var link = svg.selectAll(".link")
+        .data(graph.links)
+        .enter().append("line")
+        .attr("stroke", "#ccc");
+
+    //绘制节点
+    var node = svg.selectAll(".node")
+        .data(graph.nodes)
+        .enter().append("circle")
+        .attr("fill", function(d,i){ return color(i);})
+        .attr("r", 5)
+        .attr("stroke","black")
+        .attr("stroke-width",1);
+
+    d3cola.on("tick", function() {
+        link.attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+        node.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+    });
+
+</script>
